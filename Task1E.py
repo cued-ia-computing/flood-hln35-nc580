@@ -8,7 +8,7 @@ def run():
     N = 10
     river_station_numbers = rivers_by_station_numbers(stations, N)
     for i in range(len(river_station_numbers)):
-        print(river_station_numbers[i])  
+        print(river_station_numbers[i])
 
 
 if __name__ == "__main__":
