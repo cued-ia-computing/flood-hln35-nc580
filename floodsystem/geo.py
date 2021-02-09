@@ -60,9 +60,13 @@ from .stationdata import build_station_list
 
 #return a list of stations and their distances
 def stations_by_distance(stations,p):
+    #build an station list
     stations_list = []
     stations=build_station_list()
     for station in stations:
+        #calculate distance using haversine formula
         distance=haversine(station.coord,p)
-        stations_list.append((station.name,distance))
-    return sorted_by_key(stations_list,1)
+        #make into a list of tuples
+        stations_list.append((station.name,station.town,distance))
+    #sort by distance
+    return sorted_by_key(stations_list,2)
