@@ -53,3 +53,16 @@ def rivers_by_station_numbers(stations,N):
     N_river=river_number_stations[:n]
     return N_river
     
+
+from haversine import haversine
+from .station import MonitoringStation
+from .stationdata import build_station_list
+
+#return a list of stations and their distances
+def stations_by_distance(stations,p):
+    stations_list = []
+    stations=build_station_list()
+    for station in stations:
+        distance=haversine(station.coord,p)
+        stations_list.append((station.name,distance))
+    return sorted_by_key(stations_list,1)
