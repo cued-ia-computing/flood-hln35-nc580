@@ -44,19 +44,22 @@ def test_rivers_by_station_numbers():
     assert river_list2 == [(river, 1), (river1, 1)]
 
 def test_stations_by_distance():
-    stations=build_station_list()
-    p=(52.2053,0.1218)
-    closest=stations_by_distance(stations,p)[:10]
-    furthest=stations_by_distance(stations,p)[-10:]
-    assert len(closest)==10
-    assert len(furthest)==10
+
+    stations = build_station_list()
+    p = (52.2053, 0.1218)
+    closest = stations_by_distance(stations, p)[:10]
+    furthest = stations_by_distance(stations, p)[-10:]
+    assert len(closest) == 10
+    assert len(furthest) == 10
 
 
 def test_stations_within_radius():
-    stations=build_station_list()
-    centre =(52.2053,0.1218)
-    r=10
-    assert(len(stations_within_radius(stations,centre,r))) == 11
-    r=5
-    assert(len(stations_within_radius(stations,centre,r))) == 3
+
+    stations = build_station_list()
+    centre = (52.2053, 0.1218)
+    r = 10
+    assert(len(stations_within_radius(stations, centre, r))) == 11
+    r = 5
+    assert(len(stations_within_radius(stations, centre, r))) == 3
+    
 
