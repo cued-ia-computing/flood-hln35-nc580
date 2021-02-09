@@ -62,5 +62,3 @@ def test_stations_within_radius():
     assert(len(stations_within_radius(stations, centre, r))) == 11
     r = 5
     assert(len(stations_within_radius(stations, centre, r))) == 3
-
-
