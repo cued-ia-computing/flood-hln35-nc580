@@ -54,11 +54,11 @@ def rivers_by_station_numbers(stations,N):
     return N_river
     
 
-from haversine import haversine
+from haversine import haversine, Unit
 from .station import MonitoringStation
 from .stationdata import build_station_list
 
-#return a list of stations and their distances
+# 1B return a list of stations and their distances
 def stations_by_distance(stations,p):
     #build an station list
     stations_list = []
@@ -70,3 +70,16 @@ def stations_by_distance(stations,p):
         stations_list.append((station.name,station.town,distance))
     #sort by distance
     return sorted_by_key(stations_list,2)
+
+#1C stations within a radius from a coordinate
+def stations_within_radius(stations,centre,r):
+    #build list of stations
+    stations_in_radius=[]
+    stations=build_station_list()
+    for station in stations:
+        #calculate distance
+        distance=haversine(station.coord,centre)
+        # make sure the stations in list are within radius
+        if r>=distance:
+            stations_in_radius.append(station.name)
+    return sorted(stations_in_radius)
