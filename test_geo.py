@@ -43,8 +43,8 @@ def test_rivers_by_station_numbers():
     assert len(river_list1) == 2
     assert river_list2 == [(river, 1), (river1, 1)]
 
-def test_stations_by_distance():
 
+def test_stations_by_distance():
 
     stations = build_station_list()
     p = (52.2053, 0.1218)
@@ -55,7 +55,6 @@ def test_stations_by_distance():
 
 
 def test_stations_within_radius():
-
 
     stations = build_station_list()
     centre = (52.2053, 0.1218)
