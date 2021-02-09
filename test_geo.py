@@ -1,5 +1,4 @@
 from floodsystem.geo import stations_by_river
-from floodsystem.stationdata import build_station_list
 from floodsystem.station import MonitoringStation
 from floodsystem.geo import rivers_with_station
 from floodsystem.geo import rivers_by_station_numbers
@@ -24,17 +23,17 @@ s.append(station1)
 s.append(station2)
 
 
-def test_stations_by_river(): 
+def test_stations_by_river():
     a = stations_by_river(s)
-    assert a=={river:[label], river1:[label1]}
+    assert a == {river: [label], river1: [label1]}
 
 
-def test_rivers_with_station(): 
+def test_rivers_with_station():
     list_river = rivers_with_station(s)
     assert len(list_river) == 2
 
 
-def test_rivers_by_station_numbers(): 
+def test_rivers_by_station_numbers():
     river_list2 = rivers_by_station_numbers(s, 2)
     river_list1 = rivers_by_station_numbers(s, 1)
     assert len(river_list2) == 2
