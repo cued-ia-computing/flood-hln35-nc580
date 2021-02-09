@@ -45,6 +45,7 @@ def test_rivers_by_station_numbers():
 
 def test_stations_by_distance():
 
+
     stations = build_station_list()
     p = (52.2053, 0.1218)
     closest = stations_by_distance(stations, p)[:10]
@@ -55,11 +56,12 @@ def test_stations_by_distance():
 
 def test_stations_within_radius():
 
+
     stations = build_station_list()
     centre = (52.2053, 0.1218)
     r = 10
     assert(len(stations_within_radius(stations, centre, r))) == 11
     r = 5
     assert(len(stations_within_radius(stations, centre, r))) == 3
-    
+
 
