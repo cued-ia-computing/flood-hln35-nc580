@@ -8,7 +8,7 @@ from floodsystem.geo import stations_within_radius
 s_id = "test-s-id"
 m_id = "test-m-id"
 label = "some station"
-coord = (-2.0, 4.0)
+coord = (52.2053, 0.1217)
 trange = (-2.3, 3.4445)
 river = "River X"
 town = "My Town"
@@ -46,19 +46,17 @@ def test_rivers_by_station_numbers():
 
 def test_stations_by_distance():
 
-    stations = build_station_list()
     p = (52.2053, 0.1218)
-    closest = stations_by_distance(stations, p)[:10]
-    furthest = stations_by_distance(stations, p)[-10:]
-    assert len(closest) == 10
-    assert len(furthest) == 10
+    closest = stations_by_distance(s, p)[:1]
+    furthest = stations_by_distance(s, p)[-1:]
+    assert len(closest) == 1
+    assert len(furthest) == 1
 
 
 def test_stations_within_radius():
 
-    stations = build_station_list()
     centre = (52.2053, 0.1218)
     r = 10
-    assert(len(stations_within_radius(stations, centre, r))) == 11
+    assert(len(stations_within_radius(s, centre, r))) == 1
     r = 5
-    assert(len(stations_within_radius(stations, centre, r))) == 3
+    assert(len(stations_within_radius(s, centre, r))) == 1

@@ -22,7 +22,7 @@ trange1 = (-2.3, 3.4445)
 river1 = "River 1"
 town1 = "My Town"
 s1 = MonitoringStation(s_id1, m_id1, label1, coord1, trange1, river1, town1)
-list_river=[s0,s1]
+list_river = [s0, s1]
 
 
 def test_create_monitoring_station():
@@ -54,4 +54,4 @@ def tesst_typical_range_consistent():
 def test_inconsistent_typical_range_stations():
     inconsistent_station = inconsistent_typical_range_stations(list_river)
     assert inconsistent_station == [s0.name]
-
+    
