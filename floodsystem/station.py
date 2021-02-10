@@ -47,14 +47,12 @@ class MonitoringStation:
         else:
             return True
 
-from .stationdata import build_station_list
 
 
 # list of stations with inconsistent data
 def inconsistent_typical_range_stations(stations):
     # build an station list
     inconsistent_list = []
-    stations=build_station_list()
     for station in stations:
         if not station.typical_range_consistent():
             inconsistent_list.append(station.name)
