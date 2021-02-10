@@ -47,11 +47,10 @@ def test_create_monitoring_station():
 
 
 def tesst_typical_range_consistent():
-    assert s0.typical_range_consistent() == False
-    assert s1.typical_range_consistent() == True
+    assert s0.typical_range_consistent() is False
+    assert s1.typical_range_consistent() is True
 
 
 def test_inconsistent_typical_range_stations():
     inconsistent_station = inconsistent_typical_range_stations(list_river)
     assert inconsistent_station == [s0.name]
-    
