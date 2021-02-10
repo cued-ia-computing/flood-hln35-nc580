@@ -46,7 +46,7 @@ def test_create_monitoring_station():
     assert s.town == town
 
 
-def tesst_typical_range_consistent():
+def test_typical_range_consistent():
     assert s0.typical_range_consistent() is False
     assert s1.typical_range_consistent() is True
 
