@@ -55,7 +55,8 @@ def test_inconsistent_typical_range_stations():
     inconsistent_station = inconsistent_typical_range_stations(list_river)
     assert inconsistent_station == [s0.name]
 
+
 def test_relative_water_level():
     water_level = 5
     s1.latest_level = water_level
-    assert s1.relative_water_level() == 2.7/2.1445
+    assert s1.relative_water_level() == 2.7 / 2.1445
