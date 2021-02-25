@@ -8,7 +8,7 @@ from floodsystem.flood import stations_highest_rel_level
 def run():
     stations = build_station_list()
     update_water_levels(stations)
-    N = 5
+    N = 6
     dt = 10
     top_5_highest_rel_level = stations_highest_rel_level(stations, N)
     for station in top_5_highest_rel_level:
