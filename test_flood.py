@@ -1,5 +1,5 @@
 from floodsystem.station import MonitoringStation
-from floodsystem.flood import stations_level_over_threshold
+from floodsystem.flood import stations_level_over_threshold, stations_highest_rel_level
 s_id0 = "test-s-id0"
 m_id0 = "test-m-id0"
 label0 = "some station"
@@ -24,4 +24,12 @@ s0.latest_level = latest_level
 s1.latest_level = latest_level
 tol = 0.1
 staions_over_threshold = stations_level_over_threshold(list_river, tol)
-assert len(staions_over_threshold) == 1
+highest_rel_level = stations_highest_rel_level(list_river, 1)
+
+def test_stations_level_over_threshold():
+    assert len(staions_over_threshold) == 1
+
+
+def test_stations_highest_rel_level():
+    assert len(highest_rel_level) == 1
+    assert highest_rel_level[0] == s1

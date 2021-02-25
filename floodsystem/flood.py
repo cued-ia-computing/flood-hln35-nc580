@@ -14,3 +14,11 @@ def stations_level_over_threshold(stations, tol):
     
     return sorted_by_key(list_stations_over_threshold, 1, reverse=True)
 
+
+def stations_highest_rel_level(stations, N):
+    tol = 0
+    list_stations_with_relative_water_level = stations_level_over_threshold(stations, tol)
+    top_N_stations = []
+    for station, relative_level in list_stations_with_relative_water_level[0:N]:
+        top_N_stations.append(station)
+    return top_N_stations
