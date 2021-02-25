@@ -18,7 +18,7 @@ s_id1 = "test-s-id"
 m_id1 = "test-m-id"
 label1 = "some station"
 coord1 = (-2.0, 4.0)
-trange1 = (-2.3, 3.4445)
+trange1 = (2.3, 4.4445)
 river1 = "River 1"
 town1 = "My Town"
 s1 = MonitoringStation(s_id1, m_id1, label1, coord1, trange1, river1, town1)
@@ -54,3 +54,9 @@ def test_typical_range_consistent():
 def test_inconsistent_typical_range_stations():
     inconsistent_station = inconsistent_typical_range_stations(list_river)
     assert inconsistent_station == [s0.name]
+
+
+def test_relative_water_level():
+    water_level = 5
+    s1.latest_level = water_level
+    assert s1.relative_water_level() == 2.7 / 2.1445
