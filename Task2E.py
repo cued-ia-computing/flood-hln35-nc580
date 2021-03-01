@@ -8,12 +8,18 @@ from floodsystem.flood import stations_highest_rel_level
 def run():
     stations = build_station_list()
     update_water_levels(stations)
-    N = 6
+    N = 5
     dt = 10
     top_5_highest_rel_level = stations_highest_rel_level(stations, N)
+    
     for station in top_5_highest_rel_level:
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
-        plot_water_levels(station, dates, levels)
+    
+    for station in top_5_highest_rel_level:
+        if (station.name!= 'Charterhouse Bridge'):
+            plot_water_levels(station, dates, levels)
+        
+    print('Charterhouse bridge has been blacklisted due to inconsistent data')
 
    
 if __name__ == "__main__":

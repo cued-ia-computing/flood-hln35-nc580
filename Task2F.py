@@ -1,4 +1,5 @@
 import datetime
+import matplotlib.dates
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.plot import plot_water_level_with_fit
 from floodsystem.datafetcher import fetch_measure_levels
@@ -14,12 +15,18 @@ def run():
 
     # Finding the 5 stations for which the water levels are greatest 
     dt = 2
-    N=5
+    N = 5
     top_5_stations_highest = stations_highest_rel_level(stations, N)
 
+    # Fetch measurement data for the 5 stations 
     for station in top_5_stations_highest:
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
-        plot_water_level_with_fit(station, dates, levels, 4)
+
+    #Plot values for stations apart from the blacklisted one
+    for station in top_5_stations_highest:
+        if (station.name!= 'Charterhouse Bridge'):
+            plot_water_level_with_fit(station, dates, levels, 4)
+    print('Charterhouse bridge has been blacklisted due to inconsistent data')
 
 if __name__ == "__main__":
     print("*** Task 2F: CUED Part IA Flood Warning System ***")
