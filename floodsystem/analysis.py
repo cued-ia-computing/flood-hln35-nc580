@@ -7,4 +7,4 @@ def polyfit(dates, levels, p):
     p_coef = np.polyfit(x-x[0], levels, p)
     poly = np.poly1d(p_coef)
 
-    return (poly, plt.date2num(dates[0]))
+    return (poly, plt.date2num(dates(0)))
