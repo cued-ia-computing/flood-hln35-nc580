@@ -8,7 +8,7 @@ test:
   - pip install haversine
 
   # flake8 static code and style testing. Enable for extra testing.
-  #- python -m flake8 .
+  - python -m flake8 .
 
     # Run unit tests
   - python -m pytest -v .
