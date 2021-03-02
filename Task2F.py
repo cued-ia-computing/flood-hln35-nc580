@@ -12,12 +12,12 @@ def run():
     # Update latest level data for all stations
     update_water_levels(stations)
 
-# Finding the 5 stations for which the water levels are greatest 
+    # Finding the 5 stations for which the water levels are greatest
     dt = 2
     N = 5
     top_5_stations_highest = stations_highest_rel_level(stations, N)
 
-# Fetch measurement data for the 5 stations 
+    # Fetch measurement data for the 5 stations
     for station in top_5_stations_highest:
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
 
