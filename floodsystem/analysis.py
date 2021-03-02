@@ -9,8 +9,8 @@ def polyfit(dates, levels, p):
         p_coef = np.polyfit(x-x[0], levels, p)
         poly = np.poly1d(p_coef)
         d0= plt.date2num(dates[0])
-
-    return (poly, d0)
+        
+        return (poly, d0)
 
     else:
         pass
