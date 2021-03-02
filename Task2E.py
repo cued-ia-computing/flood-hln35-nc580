@@ -16,10 +16,7 @@ def run():
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
     
     for station in top_5_highest_rel_level:
-        if (station.name!= 'Charterhouse Bridge'):
-            plot_water_levels(station, dates, levels)
-        
-    print('Charterhouse bridge has been blacklisted due to inconsistent data')
+        plot_water_levels(station, dates, levels)
 
    
 if __name__ == "__main__":

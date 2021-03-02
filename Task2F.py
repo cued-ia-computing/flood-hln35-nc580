@@ -21,12 +21,11 @@ def run():
     # Fetch measurement data for the 5 stations 
     for station in top_5_stations_highest:
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
+        print (dates, levels)
 
-    #Plot values for stations apart from the blacklisted one
-    for station in top_5_stations_highest:
-        if (station.name!= 'Charterhouse Bridge'):
-            plot_water_level_with_fit(station, dates, levels, 4)
-    print('Charterhouse bridge has been blacklisted due to inconsistent data')
+    # Plot values for stations apart from the blacklisted one
+    #for station in top_5_stations_highest:
+        #plot_water_level_with_fit(station, dates, levels, 4)
 
 if __name__ == "__main__":
     print("*** Task 2F: CUED Part IA Flood Warning System ***")
