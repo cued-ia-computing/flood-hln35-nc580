@@ -8,7 +8,7 @@ from .analysis import polyfit
 
 
 def plot_water_levels(station, dates, levels):
-    if all(isinstance(level,float) for level in levels) is True:
+    if all(isinstance(level,float) for level in levels) is True and len(dates) == len(levels):
         typical_low = [station.typical_range[0]]*len(dates)
         typical_high = [station.typical_range[1]]*len(dates)
         # Plot
@@ -32,7 +32,7 @@ def plot_water_levels(station, dates, levels):
 # Define function that plots the water level data and the best-fit polynomial
 def plot_water_level_with_fit(station, dates, levels, p):
     
-    #if all(isinstance(level,float) for level in levels) is True:
+    if all(isinstance(level,float) for level in levels) is True and len(dates) == len(levels):
 
         poly, d0 = polyfit(dates, levels, p)
         typical_low = [station.typical_range[0]]*len(dates)
@@ -52,5 +52,5 @@ def plot_water_level_with_fit(station, dates, levels, p):
         plt.tight_layout()  # This makes sure plot does not cut off date labels
         plt.legend()
         plt.show()
-    #else:
-        #pass
+    else:
+        pass
