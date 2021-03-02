@@ -23,4 +23,3 @@ def test_analysis():
         if d0 is not None:
             assert 1 == 1
             assert d0 > 0
-
