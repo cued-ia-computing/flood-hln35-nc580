@@ -13,5 +13,5 @@ def polyfit(dates, levels, p):
         return (poly, d0)
 
     else:
-        pass
+        return None
     
