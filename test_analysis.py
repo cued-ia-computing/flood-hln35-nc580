@@ -13,7 +13,7 @@ dates1 = [datetime.datetime(2021, 3, 2, 10, 0), datetime.datetime(2021, 3, 2, 10
           datetime.datetime(2021, 3, 2, 10, 30), datetime.datetime(2021, 3, 2, 10, 45),
           datetime.datetime(2021, 3, 2, 11, 0), datetime.datetime(2021, 3, 2, 12, 0),
           datetime.datetime(2021, 3, 2, 12, 15), datetime.datetime(2021, 3, 2, 12, 30),
-          datetime.datetime(2021, 3, 2, 12, 45)]
+          datetime.datetime(2021, 3, 2, 12, 45), datetime.datetime(2021, 3, 2, 13, 0)]
 
 # Levels is a list of 9 water levels
 levels = [2.926, 2.927, 2.928, 2.928, 2.93, 2.931, 2.932, 2.933, 2.933]
