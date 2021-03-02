@@ -2,11 +2,15 @@ import datetime
 from floodsystem.analysis import polyfit
 
 # Dates is a list of 9 dates
-dates = [datetime.datetime(2021, 3, 2, 12, 45), datetime.datetime(2021, 3, 2, 12, 30), datetime.datetime(2021, 3, 2, 12, 15), datetime.datetime(2021, 3, 2, 12, 0), datetime.datetime(2021, 3, 2, 11, 0),
-         datetime.datetime(2021, 3, 2, 10, 45), datetime.datetime(2021, 3, 2, 10, 30), datetime.datetime(2021, 3, 2, 10, 15), datetime.datetime(2021, 3, 2, 10, 0)]
+dates = [datetime.datetime(2021, 3, 2, 12, 45), datetime.datetime(2021, 3, 2, 12, 30), datetime.datetime(2021, 3, 2, 12, 15),
+        datetime.datetime(2021, 3, 2, 12, 0), datetime.datetime(2021, 3, 2, 11, 0),
+         datetime.datetime(2021, 3, 2, 10, 45), datetime.datetime(2021, 3, 2, 10, 30), datetime.datetime(2021, 3, 2, 10, 15),
+          datetime.datetime(2021, 3, 2, 10, 0)]
 
 # Dates1 is a list of 10 dates
-dates1 = [datetime.datetime(2021, 3, 2, 13, 0), datetime.datetime(2021, 3, 2, 12, 45), datetime.datetime(2021, 3, 2, 12, 30), datetime.datetime(2021, 3, 2, 12, 15), datetime.datetime(2021, 3, 2, 12, 0), datetime.datetime(2021, 3, 2, 11, 0), datetime.datetime(2021, 3, 2, 10, 45),
+dates1 = [datetime.datetime(2021, 3, 2, 13, 0), datetime.datetime(2021, 3, 2, 12, 45), datetime.datetime(2021, 3, 2, 12, 30),
+          datetime.datetime(2021, 3, 2, 12, 15), datetime.datetime(2021, 3, 2, 12, 0), datetime.datetime(2021, 3, 2, 11, 0),
+           datetime.datetime(2021, 3, 2, 10, 45),
            datetime.datetime(2021, 3, 2, 10, 30), datetime.datetime(2021, 3, 2, 10, 15), datetime.datetime(2021, 3, 2, 10, 0)]
 
 # Levels is a list of 9 water levels
@@ -19,15 +23,15 @@ def test_analysis():
     # Test that output is returned when there are equal dates and levels
     poly, d0 = polyfit(dates, levels, p)
     if len(dates) == len(levels):
-        if poly != None:
+        if poly is not None:
             assert 1 == 1
-        if d0 != None:
+        if d0 is not None:
             assert 1 == 1
 
     # Test that output is returned when there are equal dates and levels
-    poly, d0 = polyfit(dates1, levels, p)  
+    poly, d0 = polyfit(dates1, levels, p)
     if len(dates1) > len(levels):
-        if poly != None:
+        if poly is not None:
             assert 1 == 1
-        if d0 != None:
+        if d0 is not None:
             assert 1 == 1

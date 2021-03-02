@@ -28,7 +28,7 @@ def run():
         n = 0
         for i in range(len(levels) - 1):
             if type(levels[i + 1]) == float and type(levels[i]) == float:
-                if levels[i] < levels[i+1]:
+                if levels[i] < levels[i + 1]:
                     n += 1
                 # Severe risk more than 60% increase, high more than 45% and moderate more than 30%
             if n > 0.6 * len(levels):
@@ -51,7 +51,7 @@ def run():
     print('High:')
     for station in stations_tol:
         if dic_risk[station] == 2:
-            print(station[0].name)  
+            print(station[0].name)
 
     print('\n' * 1)
 
