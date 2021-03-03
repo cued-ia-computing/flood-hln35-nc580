@@ -43,7 +43,7 @@ def run():
     print('Severe:')
     for station in stations_tol:
         if dic_risk[station] == 3:
-            print(station[0].name)
+            print(station[0].town)
 
     print('\n' * 1)
 
@@ -51,7 +51,7 @@ def run():
     print('High:')
     for station in stations_tol:
         if dic_risk[station] == 2:
-            print(station[0].name)
+            print(station[0].town)
 
     print('\n' * 1)
 
@@ -59,7 +59,7 @@ def run():
     print('Moderate:')
     for station in stations_tol:
         if dic_risk[station] == 1:
-            print(station[0].name)
+            print(station[0].town)
 
     print('\n' * 1)
 
@@ -67,7 +67,7 @@ def run():
     print('Low:')
     for station in stations_tol:
         if dic_risk[station] == 0:
-            print(station[0].name)
+            print(station[0].town)
 
     print('\n' * 1)
 
